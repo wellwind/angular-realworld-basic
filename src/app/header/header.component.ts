@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   keyword = '';
+  highlightTitle = false;
 
   constructor() { }
 
@@ -16,5 +17,7 @@ export class HeaderComponent implements OnInit {
 
   search($event) {
     console.log($event);
+
+    this.highlightTitle = !this.highlightTitle;
   }
 }
