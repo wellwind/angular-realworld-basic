@@ -8,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   keyword = '';
+
   highlightTitle = false;
+  fontSize = 24;
 
   constructor() { }
 
@@ -19,5 +21,6 @@ export class HeaderComponent implements OnInit {
     console.log($event);
 
     this.highlightTitle = !this.highlightTitle;
+    ++this.fontSize;
   }
 }
