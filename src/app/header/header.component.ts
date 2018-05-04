@@ -12,4 +12,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
+  search($event) {
+    console.log($event);
+  }
 }
