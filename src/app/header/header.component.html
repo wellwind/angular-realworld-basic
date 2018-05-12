@@ -5,6 +5,6 @@
     <button class="btn btn-sm btn-primary" (click)="search($event)">
       <i class="ion-search"></i>
     </button>
-    <span class="highlight">請輸入查詢條件</span>
+    <span *ngIf="keyword === ''" class="highlight">請輸入查詢條件</span>
   </div>
 </nav>
