@@ -6,7 +6,7 @@
   </ul>
 </div>
 
-<div class="post-preview" *ngFor="let article of list">
+<div class="post-preview" *ngFor="let article of list; let articleIndex = index">
   <div class="post-meta">
     <a href="profile.html">
       <img [src]="article.author.image" />
