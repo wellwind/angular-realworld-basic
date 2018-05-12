@@ -14,15 +14,14 @@ export class HeaderComponent implements OnInit {
   highlightTitle = false;
   fontSize = 24;
 
+
   constructor() { }
 
   ngOnInit() {
+
   }
 
   search($event) {
-    console.log($event);
-
-    this.highlightTitle = !this.highlightTitle;
-    ++this.fontSize;
+    this.keywordChange.emit(this.keyword);
   }
 }
