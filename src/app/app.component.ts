@@ -9,7 +9,7 @@ export class AppComponent {
   title = 'conduit';
   subtitle = 'A place to share your <u>knowledge.</u>';
 
-  list = [
+  originalList = [
     {
       "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
       "slug": "zp7yqc",
@@ -62,4 +62,14 @@ export class AppComponent {
       "favoritesCount": 5
     }
   ];
+
+  list = this.originalList;
+
+  searchArticles($event) {
+    if ($event) {
+      this.list = this.originalList.filter(article => article.title.indexOf($event) !== -1);
+    } else {
+      this.list = this.originalList;
+    }
+  }
 }
