@@ -67,4 +67,12 @@ export class ArticlesService {
   list = this.originalList;
 
   constructor() {}
+
+  searchArticles(keyword: string) {
+    if (keyword) {
+      this.list = this.originalList.filter(article => article.title.indexOf(keyword) !== -1);
+    } else {
+      this.list = this.originalList;
+    }
+  }
 }
