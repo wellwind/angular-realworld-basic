@@ -7,9 +7,10 @@ import { ArticlesComponent } from './articles/articles.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { TagsComponent } from './tags/tags.component';
+import { FilterArticlePipe } from './filter-article.pipe';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, ArticlesComponent, TagsComponent],
+  declarations: [AppComponent, HeaderComponent, FooterComponent, ArticlesComponent, TagsComponent, FilterArticlePipe],
   imports: [BrowserModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]
