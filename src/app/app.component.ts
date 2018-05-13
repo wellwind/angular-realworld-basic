@@ -10,9 +10,9 @@ export class AppComponent {
   title = 'conduit';
   subtitle = 'A place to share your <u>knowledge.</u>';
 
-  list: any[];
+  // list: any[];
 
-  constructor(private articlesService: ArticlesService) {
-    this.list = this.articlesService.list;
+  constructor(public articlesService: ArticlesService) {
+    // this.list = this.articlesService.list;
   }
 }
