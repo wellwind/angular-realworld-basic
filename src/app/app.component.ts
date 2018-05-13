@@ -13,6 +13,10 @@ export class AppComponent implements OnInit {
 
   list$: Observable<any[]>;
 
+  get keyword() {
+    return this.articlesService.keyword;
+  }
+
   constructor(private articlesService: ArticlesService) {}
 
   ngOnInit() {
