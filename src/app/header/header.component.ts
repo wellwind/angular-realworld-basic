@@ -1,4 +1,5 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ArticlesService } from '../articles.service';
 
 @Component({
   selector: 'app-header',
@@ -6,7 +7,6 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
   @Output() keywordChange = new EventEmitter<string>();
 
   keyword = '';
@@ -14,14 +14,11 @@ export class HeaderComponent implements OnInit {
   highlightTitle = false;
   fontSize = 24;
 
+  constructor(private articlesService: ArticlesService) {}
 
-  constructor() { }
-
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
 
   search($event) {
-    this.keywordChange.emit(this.keyword);
+    this.articlesService.searchArticles(this.keyword);
   }
 }
