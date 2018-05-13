@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -64,9 +65,15 @@ export class ArticlesService {
     }
   ];
 
-  list = this.originalList;
+  list;
 
-  constructor() {}
+  constructor(private httpClient: HttpClient) {}
+
+  loadArticles() {
+    this.httpClient.get('https://conduit.productionready.io/api/articles').subscribe((response: any) => {
+      this.list = response.articles;
+    });
+  }
 
   searchArticles(keyword: string) {
     if (keyword) {
