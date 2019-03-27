@@ -9,6 +9,7 @@ import { ArticlesService } from './articles.service';
 export class AppComponent implements OnInit {
   title = 'conduit';
   subtitle = 'A place to share your <u>knowledge.</u>';
+  keyword = '';
 
   list: any[];
   list$ = this.articlesService.getArticles();
@@ -22,5 +23,9 @@ export class AppComponent implements OnInit {
     //   .subscribe(articles => {
     //     this.list = articles;
     //   });
+  }
+
+  setKeyword(keyword: string) {
+    this.keyword = keyword;
   }
 }

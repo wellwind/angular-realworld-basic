@@ -18,7 +18,8 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {}
 
-  search($event) {
+  search($event: Event) {
+    this.keywordChange.emit(this.keyword);
     this.articlesService.searchArticles(this.keyword);
   }
 }
