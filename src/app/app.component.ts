@@ -11,14 +11,16 @@ export class AppComponent implements OnInit {
   subtitle = 'A place to share your <u>knowledge.</u>';
 
   list: any[];
+  list$ = this.articlesService.getArticles();
 
   constructor(private articlesService: ArticlesService) {}
 
   ngOnInit() {
-    this.articlesService
-      .getArticles()
-      .subscribe(articles => {
-        this.list = articles;
-      });
+    this.list$ = this.articlesService.getArticles();
+    // this.articlesService
+    //   .getArticles()
+    //   .subscribe(articles => {
+    //     this.list = articles;
+    //   });
   }
 }
