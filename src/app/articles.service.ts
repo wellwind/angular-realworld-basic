@@ -7,8 +7,8 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ArticlesService {
-  list: any[];
-  keyword: string;
+  list: any[] = [];
+  keyword = '';
 
   constructor(private httpClient: HttpClient) {}
 

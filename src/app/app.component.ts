@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
   subtitle = 'A place to share your <u>knowledge.</u>';
   keyword = '';
 
-  list: any[];
+  list: any[] = [];
   list$ = this.articlesService.getArticles();
 
   constructor(private articlesService: ArticlesService) {}
